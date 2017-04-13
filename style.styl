@@ -1,0 +1,736 @@
+/*
+Theme Name: wp-gb
+Theme URI: http://www.ganemosbits.trade/
+Author: Santiago Rincón
+Author URI: http://www.twitter.com/rincorpes
+Description: Theme for ganemosbits.trade
+Version: 1.0
+License: All rights reserved.
+License URI: LICENSE
+Tags: Wordpress theme, CSS3, Twitter Bootstrap, HTML5
+*/
+
+/* Default Theme */
+/* ----------------------------------------- */
+
+
+// Vars
+nocolor = transparent
+light = #fafafa
+greyE = #eee //background
+greyD = #ddd //borders
+greyC = #ccc //light links
+grey7 = #777 //paragraf
+grey3 = #333
+darkest = #101010
+lightOrange = #f7931a
+darkOrange = #ff7800
+myBlue = #217875
+grey3Alpha5 = rgba(16, 16, 16, .5)
+grey3Alpha75 = rgba(16, 16, 16, .75)
+
+
+// Mixins
+decoration(decoration)
+	text-decoration decoration
+paintin(color)
+	background-color color
+radius(radius)
+	-webkit-border-radius radius
+	-moz-border-radius radius
+	border-radius radius
+b-shadow(x y blur color)
+	-webkit-box-shadow x y blur color
+	-moz-box-shadow x y blur color
+	box-shadow x y blur color
+	
+/* WordPress WYSIWYG Editor Styles */
+	.entry-content img
+		margin 0 0 1.5em 0
+	.alingleft
+	img .alingleft
+		margin-right 1.5em
+		display inline
+		float left
+	.alignright
+	img alignright
+		margin-left 1.5em
+		display inline
+		float right
+	.aligncenter
+	img .aligncenter
+		margin-right auto
+		margin-left auto
+		display block
+		clear both
+	//.alignnone, img .alignnone
+	.wp-caption
+		margin-bottom 1.5em
+		text-align center
+		padding-top 5px
+	.wp-caption img
+		border 0 none
+		padding 0
+		margin 0
+	.wp-caption p.wp-caption-text
+		line-height 1.5
+		font-size 10px
+		margin 0
+	.wp-smiley
+		margin 0 !important
+		max-height 1em
+	blockquote.left
+		margin-right 20px
+		text-align right
+		margin-left 0
+		width 33%
+		float left
+	blockquote.right
+		margin-left 20px
+		text-align left
+		margin-right 0
+		width 33%
+		float right
+	/*
+	.gallery dl
+	.gallery dt
+	.gallery dd
+	.gallery dl a
+	.gallery dl img
+	.gallery-caption
+	.size-full
+	.size-large
+	.size-medium
+	.size-thumbnail
+	*/
+	
+body
+	paintin greyE
+	font-family 'Open Sans', sans-serif
+	
+	div.ad-728x90
+		width 728px
+		height 90px
+		paintin greyE 
+		border 1px solid greyD	
+	div.ad-300x250
+		width 300px
+		height 250px
+		paintin greyE 
+		border 1px solid greyD
+	div.ad-300x600
+		width 300px
+		height 600px
+		paintin greyE 
+		border 1px solid greyD
+	a 
+		color lightOrange
+		decoration underline
+		&:hover
+			color darkOrange
+			decoration none
+	p 
+		color grey7
+		
+	em
+		color red
+
+#gb-header
+	paintin darkest
+	color light
+	.top-navbar
+		color greyC
+		a 
+			color greyC
+			decoration none
+			&:hover
+				color light
+		.navbar
+			paintin nocolor
+			margin-bottom 0
+			border none
+			.navbar-header
+				button
+					border none
+					margin-right 0
+					&:focus
+					&:hover
+						paintin nocolor
+						color light
+				.site-logo
+					padding-top 5px
+					padding-bottom 5px
+			.navbar-collapse
+				a 
+					&:focus
+					&:hover
+						paintin nocolor
+				@media screen and (max-width: 767px)
+					ul
+						border-bottom 1px solid light
+						li ul
+							border none
+							li 
+								border-bottom 1px solid light
+				
+				#searchform
+					position relative
+					.glyphicon-search
+						position absolute
+						right 20px
+						color grey3
+						font-size 2em
+						z-index 1000
+						@media screen and (max-width: 767px)
+							top 12px
+					input
+						padding-right 40px
+						&:focus
+							border-color lightOrange
+							box-shadow 0 0 0 nocolor
+					
+	.site-identity
+		paintin light
+		color grey3
+		padding-top 20px
+		padding-bottom 20px
+		
+		@media screen and (min-width: 768px) and (max-width: 1199px)
+			.header-advertise
+				float left !important
+	.main-navbar
+		paintin light
+		color grey3
+		border-bottom 1px solid greyD
+		.navbar
+			margin-bottom 0
+			border none
+			a
+				decoration none
+			.menu-header-nav-container
+				float right
+				@media screen and (min-width: 992px) and (max-width: 1199px)
+					float left !important
+
+#gb-main-content
+	margin-top 30px
+	margin-bottom 30px
+	
+	#gb-front-page-content
+		
+		#gb-slider
+			paintin grey3
+			position relative
+			height 382px
+			overflow hidden
+			@media screen and (max-width 425px)
+				height 201px
+			@media screen and (min-width 425px) and (max-width 991px)
+				height 367px
+			@media screen and (min-width 992px) and (max-width 1200px)
+				height 314px
+			article
+				position relative
+				height 382px
+				color greyC
+				@media screen and (max-width 425px)
+					height 201px
+				@media screen and (min-width 425px) and (max-width 991px)
+					height 367px
+				@media screen and (min-width 992px) and (max-width 1200px)
+					height 314px
+				a 
+					decoration none
+				.post-thumbnail
+					width 100%
+					position absolute
+					top 0
+					left 0
+					z-index 0
+					img
+						width 100%
+						height auto
+						@media screen and (max-width 425px)
+							width 395px
+							height 201px
+						@media screen and (min-width 425px) and (max-width 991px)
+							width 720px
+							height 367px
+						@media screen and (min-width 992px) and (max-width 1200px)
+							width 617px
+							height 314px
+				.post-wrapper
+					width 100%
+					position absolute
+					z-index 1000
+					left 0
+					bottom 0
+					paintin grey3Alpha5
+					padding 10px
+					.post-category
+						@media screen and (max-width 475px)
+							display none
+						span
+							paintin lightOrange
+							a 
+								color light
+					h2
+						@media screen and (max-width 425px)
+							font-size 1em
+						@media screen and (min-width 425px) and (max-width 991px)
+							font-size 2em
+					.post-info
+						@media screen and (max-width 475px)
+							display none
+			.slider-navbar
+				position absolute
+				top 40%
+				width 100%
+				z-index 1000
+				@media screen and (max-width 425px)
+					top 10%
+				@media screen and (min-width 992px) and (max-width 1200px)
+					top 10%
+				a 
+					&:last-child
+						float right
+				span
+					color greyD
+					padding 5px
+					paintin grey3Alpha5
+					font-size 3em
+					border-radius 100%
+		
+		.main-advertise
+			margin-top 40px
+		
+		.older-posts
+			margin-top 40px
+			article
+				paintin light
+				border 1px solid greyD
+				radius 5px
+				b-shadow 1px 1px 10px greyD
+				header
+					padding-top 15px
+					border-bottom 2px solid lightOrange
+					img
+						width 100%
+						height auto
+					h2
+						font-size 1.5em
+						text-transform uppercase
+						a
+							color darkest
+							decoration none
+							&:hover
+								color lightOrange
+				.older-post-content
+					margin-top 15px
+					p 
+						color grey7
+					.ssba
+						display none
+				footer
+					color grey7
+		
+		#gb-edu
+			margin-top 40px
+			paintin light
+			border 1px solid greyD
+			radius 5px
+			b-shadow 1px 1px 10px greyD
+			h3
+				text-transform uppercase
+				border-bottom 1px solid greyD
+				padding-bottom 10px
+				text-align center
+			.gb-edu-video
+				border-right 1px solid greyD
+				text-align center
+				figure
+					iframe
+						width 100%
+					figcaption
+						padding-top 5px
+						padding-bottom 5px
+			.gb-edu-navbar
+				ul
+					li 
+						width 100%
+						border-bottom 1px solid greyD
+					a
+						decoration none
+		
+		#gb-comunity
+			margin-top 40px
+			paintin light
+			border 1px solid greyD
+			radius 5px
+			b-shadow 1px 1px 10px greyD
+			h3
+				text-transform uppercase
+				border-bottom 1px solid greyD
+				padding-bottom 10px
+			.gb-comunity-subscribe
+				border-right 1px solid greyD
+				background myBlue
+				color greyD
+				radius 5px
+				h3
+					color light
+					text-align center
+				> p
+					color greyD
+				form
+					padding-top 15px
+					border-top 1px solid light
+					border-bottom 1px solid light
+					
+	#gb-blog-content
+		article
+			paintin light
+			margin-top 40px
+			margin-bottom 40px
+			border 1px solid greyD
+			border-bottom 3px solid greyD
+			radius 5px
+			b-shadow 1px 1px 10px greyD
+			&:hover
+				border-bottom 3px solid lightOrange
+			header
+				border-bottom 2px solid lightOrange
+				position relative
+				.post-date
+					position absolute
+					padding 10px
+					paintin myBlue
+					color light
+					radius 2px
+				.post-thumbnail
+					width 100%
+					paintin greyE
+					border-bottom 1px solid greyD
+					img 
+						width 100%
+						height auto
+				.post-info
+					margin-top 20px
+					ul 
+						li 
+							display inline 
+							padding 0 20px
+							border-right 1px solid greyD
+							&:last-child
+								border none
+								a 
+									decoration none
+							span 
+								padding 0 5px
+				.post-title
+					margin-bottom 20px
+					padding 0 20px
+					h2
+						text-transform uppercase
+						a 
+							color grey3
+							decoration none
+							&:hover
+								color lightOrange
+			.the-content
+				padding 20px
+				p 
+					color grey7
+			footer
+				padding 20px
+				border-top 2px solid lightOrange
+				.post-tags
+					line-height 1.5
+					span 
+						padding 0 5px
+					a 
+						display inline-flex
+						paintin myBlue
+						color light
+						decoration none
+						padding 2px
+						radius 2px
+						font-size .8em
+		#gb-pagination
+			margin-top 40px
+			margin-bottom 40px
+			text-align center
+			ul 
+				list-style none
+				margin 0
+				padding 0
+				li
+					display inline
+					padding 10px
+					paintin light
+					border 1px solid greyD
+					radius 5px
+					a 
+						padding 10px
+						decoration none
+						
+	#gb-page-content
+		article
+			paintin light
+			margin-bottom 40px
+			border 1px solid greyD
+			border-bottom 3px solid greyD
+			radius 5px
+			b-shadow 1px 1px 10px greyD
+			&:hover
+				border-bottom 3px solid lightOrange
+			header
+				padding 0 15px 10px
+				border-bottom 2px solid lightOrange
+			.the-content
+				padding 20px
+				p 
+					color grey7
+			footer
+				padding 20px
+				border-top 2px solid lightOrange
+	
+	#gb-single-content
+		article
+			paintin light
+			margin-top 40px
+			margin-bottom 40px
+			radius 5px
+			b-shadow 1px 1px 10px greyD
+			header
+				padding 20px
+				border-bottom 2px solid lightOrange
+				h1
+					border-bottom 1px solid greyD
+					padding-bottom 15px
+					text-transform uppercase
+				.post-info
+					ul
+						li 
+							display inline
+							padding 0 15px
+							border-right 1px solid greyD
+							&:first-child
+								padding-left 0
+							&:last-child
+								border none
+							span 
+								padding 0 10px
+							a 
+								decoration none
+			.the-content
+				padding 20px
+				p 
+					color grey7
+			footer
+				padding 20px
+				border-top 2px solid lightOrange
+				.post-tags
+					line-height 1.5
+					span 
+						padding 0 5px
+					a 
+						display inline-flex
+						paintin myBlue
+						color light
+						decoration none
+						padding 2px
+						radius 2px
+						font-size .8em
+		#gb-comments
+			paintin light
+			margin-top 40px
+			margin-bottom 40px
+			radius 5px
+			b-shadow 1px 1px 10px greyD
+			padding 20px
+			.comments-title
+				text-transform uppercase
+			.comment-list
+				li
+					border-bottom 1px solid greyD
+					&:last-child
+						border none
+			#respond
+				h3
+					a 
+						decoration none
+					small
+						a
+							padding 5px 
+							color light
+							paintin myBlue
+							font-size .8em
+							radius 2px
+			form
+				.comment-form-comment
+					label
+						display block
+					textarea
+						width 100%
+				.form-submit
+					#submit
+						paintin lightOrange
+						border 1px solid greyD
+						radius 2px
+						color light
+						padding 10px
+						&:hover
+							paintin darkOrange
+							
+	#gb-contact-content
+		paintin light
+		radius 5px
+		b-shadow 1px 1px 10px greyD
+		article
+			header
+				padding 20px
+				border-bottom 2px solid lightOrange
+				h1
+					text-align center
+			.the-content
+				width 50%
+				display block
+				margin-left auto
+				margin-right auto
+				form
+					margin-top 40px
+					margin-bottom 40px
+					p 
+						label
+							width 100%
+							span 
+								width 100%
+								input
+								textarea
+									width 100%
+						input[type=submit]
+							paintin lightOrange
+							color light
+							border 1px solid greyD
+							radius 2px
+							padding 5px 10px
+							&:hover
+								paintin darkOrange
+				.ssba
+					display none
+					
+	#gb-front-page-sidebar
+	#gb-main-sidebar
+		aside
+			text-align center
+			paintin light
+			margin-bottom 40px
+			h3
+				text-transform uppercase
+				border-bottom 2px solid greyD
+				padding 15px 0
+			&.sidebar-donate
+				paintin myBlue
+				color greyD
+				radius 5px
+				b-shadow 1px 1px 10px greyD
+				h3
+					margin-bottom 0
+				figure
+					margin-top 0
+					paintin	grey3Alpha75
+					padding-top 15px
+					border-bottom 1px solid light
+					img
+						margin-top 15px
+						margin-bottom 15px
+					figcaption
+						padding-bottom 15px
+				p
+					color greyD
+					padding 20px 5px
+			&.sidebar-coidesk-widget
+				padding-bottom 15px
+				radius 5px
+				b-shadow 1px 1px 10px greyD
+			&.sidebar-twitter
+				paintin nocolor
+				h3
+					border none
+			&.sidebar-subscribe
+				paintin myBlue
+				radius 5px
+				h3
+					color light
+				p
+					color greyD
+					padding 0 10px
+				form
+					border-top 1px solid light
+					border-bottom 1px solid light
+					padding 20px
+			&.sidebar-social-buttons
+				radius 5px
+				b-shadow 1px 1px 10px greyD
+				.fb-button
+				.twitter-button
+					padding 0 20px
+					text-align left
+					margin-top 20px
+			&.sidebar-categories
+				padding 0 40px
+				radius 5px
+				b-shadow 1px 1px 10px greyD
+				ul 
+					text-align left
+					li 
+						width 100%
+						border-bottom 1px solid greyD
+						&:last-child
+							border none
+						a 
+							display block
+							padding 5px
+							decoration none
+							&:hover
+								paintin greyD
+					
+#gb-footer
+	paintin darkest
+	color light
+	margin-top 40px
+	h3
+		padding-bottom 10px
+		margin-bottom 20px
+		border-bottom 1px solid light
+		text-align center
+	.footer-content
+		.footer-tags
+			text-align justify
+			padding 0 50px	
+		.footer-navbar
+			.menu-footer-nav-container
+				text-align left
+				ul
+					li
+						width 100%
+						border-bottom 1px solid light
+						@media screen and (min-width: 768px) and (max-width: 990px)
+							width auto
+							border none
+						&:last-child
+							border none
+						a
+							color greyC
+							decoration none
+							&:focus
+							&:hover
+								paintin nocolor
+								color light
+	.footer-info
+		p
+			margin-top 20px
+			border-top 1px solid light
+			padding-top 20px
+			text-align center
